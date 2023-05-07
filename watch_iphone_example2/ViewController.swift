@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var stopButton: UIButton!
 
-    private var timeRemaining: Int = 10
+    private var INITIAL_TIME = 10
 
     private var timer: Timer?
 
@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         bindManager()
         setUpUI()
+        registerLocalNotification()
+        fetchFromCoreData()
+    }
+
+    private func registerLocalNotification() {
         Task {
             do {
                 try await localNotification.register()
@@ -61,41 +66,93 @@ class ViewController: UIViewController {
             .sink { msg in
 
             }.store(in: &cancellables)
+
+        connectivityManager.$isRunning
+            .sink { val in
+                if val {
+                    self.startTapAction()
+                } else {
+                    self.timer?.invalidate()
+                    self.timer = nil
+                    self.connectivityManager.timeRemaining = self.INITIAL_TIME
+                }
+            }.store(in: &cancellables)
+
+        connectivityManager.$timeRemaining
+            .sink { [weak self] t in
+                self?.timerLabel.text = String(format:"%d:%02d", 0, t)
+                t == self?.INITIAL_TIME ? self?.saveToCoreData(isRunning: false) : self?.saveToCoreData(isRunning: true)
+                self?.startButton.isUserInteractionEnabled = t == self?.INITIAL_TIME
+                self?.startButton.backgroundColor = t == self?.INITIAL_TIME ? .red.withAlphaComponent(0.7) : .gray.withAlphaComponent(0.7)
+            }.store(in: &cancellables)
+
     }
 
     @IBAction func startTapped(_ sender: UIButton) {
+        startTapAction()
+        connectivityManager.send(["start":10])
+    }
+
+    private func startTapAction() {
+        step()
         guard timer == nil else { return }
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(step), userInfo: nil, repeats: true)
-        Task {
-            do {
-                try await localNotification.schedule(after: 10)
-            } catch {
-                print("⌚️ local notification: \(error.localizedDescription)")
-            }
-        }
+        startButton.isUserInteractionEnabled = false
+        startButton.backgroundColor = .gray.withAlphaComponent(0.7)
     }
 
     @IBAction func stopTapped(_ sender: UIButton) {
         timer?.invalidate()
         timer = nil
-        timeRemaining = 10
-        timerLabel.text = String(format:"%d:%02d", 0, timeRemaining)
+        connectivityManager.timeRemaining = INITIAL_TIME
+        saveToCoreData(isRunning: false)
+        timerLabel.text = String(format:"%d:%02d", 0, connectivityManager.timeRemaining)
+        startButton.isUserInteractionEnabled = true
+        startButton.backgroundColor = .red.withAlphaComponent(0.7)
+        connectivityManager.send(["stop":10])
     }
 
     @objc func step() {
-        if timeRemaining > 0 {
-            timeRemaining -= 1
+        if connectivityManager.timeRemaining > 0 {
+            connectivityManager.timeRemaining -= 1
         } else {
             timer?.invalidate()
             timer = nil
-            timeRemaining = 10
+            connectivityManager.timeRemaining = INITIAL_TIME
+            Task {
+                do {
+                    try await localNotification.schedule(after: 1)
+                } catch {
+                    print("⌚️ local notification: \(error.localizedDescription)")
+                }
+            }
         }
-        timerLabel.text = String(format:"%d:%02d", 0, timeRemaining)
     }
 
-   
-    @IBAction func send(_ sender: UIButton) {
-        WatchConnectivityManager.shared.send("화이팅")
+    func fetchFromCoreData() {
+        let fetch = TimerTime.fetchRequest()
+        do {
+            let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+            let results = try managedContext.fetch(fetch)
+            connectivityManager.timeRemaining = Int(results.last?.time ?? 10)
+            timerLabel.text = String(format:"%d:%02d", 0, connectivityManager.timeRemaining)
+            startButton.isUserInteractionEnabled = !(results.last?.isRunning ?? false)
+            guard timer == nil else { return }
+            if !startButton.isUserInteractionEnabled {
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(step), userInfo: nil, repeats: true)
+                startButton.backgroundColor = .gray.withAlphaComponent(0.7)
+            }
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+    }
+
+    func saveToCoreData(isRunning: Bool? = false) {
+        let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+        let coreDataTime = TimerTime(context: managedContext)
+        coreDataTime.time = Int16(connectivityManager.timeRemaining)
+        coreDataTime.isRunning = isRunning ?? false
+        AppDelegate.sharedAppDelegate.coreDataStack.saveContext()
     }
 }
 

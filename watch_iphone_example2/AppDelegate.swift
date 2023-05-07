@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    lazy var coreDataStack: CoreDataStack = .init(modelName: "LapsModel")
+    lazy var coreDataStack: CoreDataStack = .init(modelName: "TimerModel")
 
     static let sharedAppDelegate: AppDelegate = {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {

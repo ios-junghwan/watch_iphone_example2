@@ -27,7 +27,6 @@
 		43AA37FA2A0526E30044605A /* RemoteNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA37F62A0526E30044605A /* RemoteNotificationView.swift */; };
 		43AA37FB2A0526E30044605A /* RemoteNotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA37F72A0526E30044605A /* RemoteNotificationModel.swift */; };
 		43AA37FC2A0526E30044605A /* RemoteNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA37F82A0526E30044605A /* RemoteNotificationController.swift */; };
-		43AA380F2A0558800044605A /* ContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA380E2A0558800044605A /* ContentView+ViewModel.swift */; };
 		43AA38142A0769A10044605A /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FEDD12A03A97100A1AE85 /* LocalNotifications.swift */; };
 		43AA38172A076ABC0044605A /* TimerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43AA38152A076ABC0044605A /* TimerModel.xcdatamodeld */; };
 		43AA38212A076B400044605A /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA38202A076B400044605A /* CoreDataStack.swift */; };
@@ -83,7 +82,6 @@
 		43AA37F72A0526E30044605A /* RemoteNotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationModel.swift; sourceTree = "<group>"; };
 		43AA37F82A0526E30044605A /* RemoteNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNotificationController.swift; sourceTree = "<group>"; };
 		43AA37F92A0526E30044605A /* RemotePush.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = RemotePush.apns; sourceTree = "<group>"; };
-		43AA380E2A0558800044605A /* ContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+ViewModel.swift"; sourceTree = "<group>"; };
 		43AA38162A076ABC0044605A /* TimerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TimerModel.xcdatamodel; sourceTree = "<group>"; };
 		43AA38202A076B400044605A /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +156,6 @@
 				430FEDA02A0396DF00A1AE85 /* watch_iphone_example2_wApp.swift */,
 				43AA37F32A0525EE0044605A /* NotificationView.swift */,
 				430FEDA22A0396DF00A1AE85 /* ContentView.swift */,
-				43AA380E2A0558800044605A /* ContentView+ViewModel.swift */,
 				43AA37EB2A04C22C0044605A /* Assets.xcassets */,
 				430FEDA62A0396E000A1AE85 /* Preview Content */,
 			);
@@ -336,7 +333,6 @@
 				43AA37FB2A0526E30044605A /* RemoteNotificationModel.swift in Sources */,
 				430FEDD52A03A97100A1AE85 /* NotificationController.swift in Sources */,
 				43AA37FA2A0526E30044605A /* RemoteNotificationView.swift in Sources */,
-				43AA380F2A0558800044605A /* ContentView+ViewModel.swift in Sources */,
 				43AA38292A076C820044605A /* TimerModel.xcdatamodeld in Sources */,
 				430FEDC02A0399B400A1AE85 /* WatchConnectivityManager.swift in Sources */,
 				430FEDA12A0396DF00A1AE85 /* watch_iphone_example2_wApp.swift in Sources */,
