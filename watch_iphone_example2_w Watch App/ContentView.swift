@@ -11,7 +11,7 @@ struct ContentView: View {
 
     @ObservedObject private var connectivityManager = WatchConnectivityManager.shared
 
-    @State var startDate = Date.now
+    @State var endDate = Date.now
 
     @State var timeElapsed: Int = 0
 
@@ -38,7 +38,6 @@ struct ContentView: View {
                 saveToCoreData(isRunning: false)
                 connectivityManager.timeRemaining = INITIAL_TIME
                 connectivityManager.isRunning = false
-//                connectivityManager.send(["end":10])
             }
         }
     }

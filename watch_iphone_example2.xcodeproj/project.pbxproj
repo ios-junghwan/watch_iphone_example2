@@ -18,7 +18,6 @@
 		430FEDC02A0399B400A1AE85 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FED972A03968500A1AE85 /* WatchConnectivityManager.swift */; };
 		430FEDC62A039AC900A1AE85 /* watch_iphone_example2_w Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 430FED9E2A0396DF00A1AE85 /* watch_iphone_example2_w Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		430FEDCF2A03A5DE00A1AE85 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 430FEDCE2A03A5DE00A1AE85 /* PushNotificationPayload.apns */; };
-		430FEDD32A03A97100A1AE85 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FEDD02A03A97100A1AE85 /* ExtensionDelegate.swift */; };
 		430FEDD42A03A97100A1AE85 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FEDD12A03A97100A1AE85 /* LocalNotifications.swift */; };
 		430FEDD52A03A97100A1AE85 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FEDD22A03A97100A1AE85 /* NotificationController.swift */; };
 		43AA37EC2A04C22C0044605A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AA37EB2A04C22C0044605A /* Assets.xcassets */; };
@@ -71,7 +70,6 @@
 		430FEDA02A0396DF00A1AE85 /* watch_iphone_example2_wApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watch_iphone_example2_wApp.swift; sourceTree = "<group>"; };
 		430FEDA22A0396DF00A1AE85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		430FEDCE2A03A5DE00A1AE85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PushNotificationPayload.apns; path = "../../wos-materials/06-notifications/projects/final/Pawsome/Pawsome WatchKit Extension/PushNotificationPayload.apns"; sourceTree = "<group>"; };
-		430FEDD02A03A97100A1AE85 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		430FEDD12A03A97100A1AE85 /* LocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		430FEDD22A03A97100A1AE85 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		43AA37EB2A04C22C0044605A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				43AA37F52A05263B0044605A /* watch_iphone_example2_w Watch App.entitlements */,
 				430FEDCE2A03A5DE00A1AE85 /* PushNotificationPayload.apns */,
 				430FEDA02A0396DF00A1AE85 /* watch_iphone_example2_wApp.swift */,
-				43AA37F32A0525EE0044605A /* NotificationView.swift */,
 				430FEDA22A0396DF00A1AE85 /* ContentView.swift */,
 				43AA37EB2A04C22C0044605A /* Assets.xcassets */,
 				430FEDA62A0396E000A1AE85 /* Preview Content */,
@@ -180,7 +177,7 @@
 		430FEDD62A03A97500A1AE85 /* LocalNotification */ = {
 			isa = PBXGroup;
 			children = (
-				430FEDD02A03A97100A1AE85 /* ExtensionDelegate.swift */,
+				43AA37F32A0525EE0044605A /* NotificationView.swift */,
 				430FEDD22A03A97100A1AE85 /* NotificationController.swift */,
 				430FEDD12A03A97100A1AE85 /* LocalNotifications.swift */,
 			);
@@ -326,7 +323,6 @@
 			files = (
 				43AA38222A076B400044605A /* CoreDataStack.swift in Sources */,
 				430FEDD42A03A97100A1AE85 /* LocalNotifications.swift in Sources */,
-				430FEDD32A03A97100A1AE85 /* ExtensionDelegate.swift in Sources */,
 				43AA37F42A0525EE0044605A /* NotificationView.swift in Sources */,
 				430FEDA32A0396DF00A1AE85 /* ContentView.swift in Sources */,
 				43AA37FC2A0526E30044605A /* RemoteNotificationController.swift in Sources */,
