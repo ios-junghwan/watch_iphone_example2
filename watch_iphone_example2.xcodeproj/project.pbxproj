@@ -20,6 +20,7 @@
 		430FEDCF2A03A5DE00A1AE85 /* PushNotificationPayload.apns in Resources */ = {isa = PBXBuildFile; fileRef = 430FEDCE2A03A5DE00A1AE85 /* PushNotificationPayload.apns */; };
 		430FEDD42A03A97100A1AE85 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FEDD12A03A97100A1AE85 /* LocalNotifications.swift */; };
 		430FEDD52A03A97100A1AE85 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430FEDD22A03A97100A1AE85 /* NotificationController.swift */; };
+		433AB8492A07E4260045C570 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433AB8482A07E4260045C570 /* ExtensionDelegate.swift */; };
 		43AA37EC2A04C22C0044605A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AA37EB2A04C22C0044605A /* Assets.xcassets */; };
 		43AA37EE2A04C2480044605A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43AA37ED2A04C2480044605A /* Preview Assets.xcassets */; };
 		43AA37F42A0525EE0044605A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA37F32A0525EE0044605A /* NotificationView.swift */; };
@@ -72,6 +73,7 @@
 		430FEDCE2A03A5DE00A1AE85 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PushNotificationPayload.apns; path = "../../wos-materials/06-notifications/projects/final/Pawsome/Pawsome WatchKit Extension/PushNotificationPayload.apns"; sourceTree = "<group>"; };
 		430FEDD12A03A97100A1AE85 /* LocalNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		430FEDD22A03A97100A1AE85 /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		433AB8482A07E4260045C570 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		43AA37EB2A04C22C0044605A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43AA37ED2A04C2480044605A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43AA37F32A0525EE0044605A /* NotificationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				43AA37F92A0526E30044605A /* RemotePush.apns */,
+				433AB8482A07E4260045C570 /* ExtensionDelegate.swift */,
 				43AA37F82A0526E30044605A /* RemoteNotificationController.swift */,
 				43AA37F72A0526E30044605A /* RemoteNotificationModel.swift */,
 				43AA37F62A0526E30044605A /* RemoteNotificationView.swift */,
@@ -323,6 +326,7 @@
 			files = (
 				43AA38222A076B400044605A /* CoreDataStack.swift in Sources */,
 				430FEDD42A03A97100A1AE85 /* LocalNotifications.swift in Sources */,
+				433AB8492A07E4260045C570 /* ExtensionDelegate.swift in Sources */,
 				43AA37F42A0525EE0044605A /* NotificationView.swift in Sources */,
 				430FEDA32A0396DF00A1AE85 /* ContentView.swift in Sources */,
 				43AA37FC2A0526E30044605A /* RemoteNotificationController.swift in Sources */,

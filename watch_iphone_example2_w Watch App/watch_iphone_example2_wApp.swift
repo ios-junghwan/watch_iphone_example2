@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct watch_iphone_example2_w_Watch_AppApp: App {
+    @WKExtensionDelegateAdaptor(ExtensionDelegate.self)
+    private var extensionDelegate
 
     var body: some Scene {
         WindowGroup {
