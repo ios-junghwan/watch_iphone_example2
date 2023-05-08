@@ -7,5 +7,7 @@
         "category": "swift"
     },
 
+    "Simulator Target Bundle": "cashwalkinc.watch-iphone-example2.watchkitapp",
+
     "date": "2023-05-05T12:00:00Z"
 }
